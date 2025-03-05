@@ -190,7 +190,9 @@ async def imageBounding(name: str):
         return json_output
     
     #image = name
-    image = "Img\\" + name
+
+    image = "https://fastapitestcf.s3.ap-southeast-1.amazonaws.com/Vz2.jpg"
+    #image = "Img\\" + name
 
     prompt = "Accurately detect the 2D bounding boxes areas of this vehicle each damaged(e.g., dents, scratches, cracks) area and vehicle(with colour)"  
 
