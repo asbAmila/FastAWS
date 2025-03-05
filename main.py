@@ -191,18 +191,22 @@ async def imageBounding(name: str):
     
     #image = name
 
-    image = "https://fastapitestcf.s3.ap-southeast-1.amazonaws.com/Vz2.jpg"
+    #image = "https://fastapitestcf.s3.ap-southeast-1.amazonaws.com/Vz2.jpg"
     #image = "Img\\" + name
 
+    image_folder = 'Img'
+    image_file = name
+    image = os.path.join(image_folder, image_file)
+    
     prompt = "Accurately detect the 2D bounding boxes areas of this vehicle each damaged(e.g., dents, scratches, cracks) area and vehicle(with colour)"  
 
-    # img = Image.open(BytesIO(open(image, "rb").read()))
-    # im = Image.open(image).resize((1024, int(1024 * img.size[1] / img.size[0])), Image.Resampling.LANCZOS)
+    img = Image.open(BytesIO(open(image, "rb").read()))
+    im = Image.open(image).resize((1024, int(1024 * img.size[1] / img.size[0])), Image.Resampling.LANCZOS)
 
     #for url open AWS s3
-    response = requests.get(image)
-    img = Image.open(BytesIO(response.content))
-    im = img.resize((1024, int(1024 * img.size[1] / img.size[0])), Image.Resampling.LANCZOS)
+    # response = requests.get(image)
+    # img = Image.open(BytesIO(response.content))
+    # im = img.resize((1024, int(1024 * img.size[1] / img.size[0])), Image.Resampling.LANCZOS)
 
 
     # Run model to find bounding boxes
