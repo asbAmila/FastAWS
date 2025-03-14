@@ -198,7 +198,9 @@ async def imageBounding(name: str):
     image_file = name
     image = os.path.join(image_folder, image_file)
     
-    prompt = "Accurately detect the 2D bounding boxes areas of this vehicle each damaged(e.g., dents, scratches, cracks) area and vehicle(with colour)"  
+    #prompt = "Accurately detect the 2D bounding boxes areas of this vehicle each damaged(e.g., dents, scratches, cracks) area and vehicle(with colour)"  
+    prompt = "Accurately detect the 2D bounding boxes' areas of main vehicle only and find each damaged(e.g., dents, scratches, cracks) area"  
+
 
     img = Image.open(BytesIO(open(image, "rb").read()))
     im = Image.open(image).resize((1024, int(1024 * img.size[1] / img.size[0])), Image.Resampling.LANCZOS)
