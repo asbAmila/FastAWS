@@ -70,8 +70,10 @@ from google import genai
 
 client = genai.Client(api_key="AIzaSyBx_T-BRtydVXI-9JBpZmtvXP4bF7c7V-0")
 
-model_name = "gemini-2.0-flash-exp"
+#model_name = "gemini-2.0-flash-exp"
+model_name = "gemini-2.0-flash-001"
 
+#gemini-2.0-flash-001 , gemini-2.0-flash-lite-001
 
 
 @app.post("/2dbox")
